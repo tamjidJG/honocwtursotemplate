@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "generate:sqlite": "drizzle-kit generate:sqlite --schema=./src/db/schema.ts",
+    "db:migrate": "bun ./src/db/migrations.ts"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.6.0",
+    "drizzle-orm": "^0.30.7",
+    "hono": "^4.2.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240403.0",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.20.14",
+    "tsx": "^4.7.2",
+    "wrangler": "^3.47.0"
+  }
+}
